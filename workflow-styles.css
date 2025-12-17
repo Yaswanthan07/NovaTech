@@ -1,0 +1,652 @@
+/* ===== WORKFLOW PAGE SPECIFIC STYLES ===== */
+
+/* SECTION 2: WORKFLOW HERO */
+.workflow-hero {
+    width: 100%;
+    min-height: 300px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-blue) 50%, rgba(0, 102, 255, 0.05) 100%);
+    padding: 4rem 3rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workflow-hero-content {
+    flex: 1;
+    max-width: 700px;
+    z-index: 2;
+    animation: slideInLeft 0.8s ease;
+}
+
+.workflow-headline {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.workflow-subheadline {
+    font-size: 1.3rem;
+    color: var(--dark-grey);
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.workflow-hero-shapes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.workflow-hero-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
+
+.workflow-hero-shapes .shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-blue);
+    top: -100px;
+    right: -100px;
+}
+
+.workflow-hero-shapes .shape-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--secondary-blue);
+    bottom: 50px;
+    right: 150px;
+}
+
+.workflow-hero-shapes .shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary-blue);
+    top: 50%;
+    right: 50px;
+}
+
+/* SECTION 3: WORKFLOW DIAGRAM */
+.workflow-diagram-section {
+    width: 100%;
+    padding: 4rem 3rem;
+    background: var(--white);
+}
+
+.workflow-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.workflow-diagram-section .section-headline {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Vertical Flow */
+.vertical-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 2rem 0;
+    margin: 0 auto 3rem auto;
+    position: relative;
+    width: 100%;
+}
+
+.vertical-flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    transform: translateX(-50%);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.workflow-step-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.floating-left,
+.floating-right {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    transition: all 0.6s ease 0.2s;
+    position: relative;
+    z-index: 0;
+}
+
+.workflow-step-wrapper.scroll-visible .floating-left,
+.workflow-step-wrapper.scroll-visible .floating-right {
+    opacity: 0.4;
+    transform: translateY(0) scale(1);
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.floating-left {
+    animation-delay: 0s;
+}
+
+.floating-right {
+    animation-delay: 1.5s;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1);
+    }
+}
+
+.workflow-node {
+    flex-shrink: 0;
+    background: var(--white);
+    border: 2px solid var(--medium-grey);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    position: relative;
+    z-index: 1;
+}
+
+.workflow-node.scroll-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.workflow-node:hover {
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px) scale(1);
+}
+
+.workflow-node.final-node {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border: none;
+    color: var(--white);
+}
+
+.workflow-node.final-node:hover {
+    box-shadow: 0 12px 40px rgba(0, 52, 204, 0.25);
+}
+
+.node-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.workflow-node.final-node .node-icon {
+    color: var(--white);
+}
+
+.workflow-node h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.workflow-node.final-node h3 {
+    color: var(--white);
+}
+
+.node-label {
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.workflow-node.final-node .node-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.node-details {
+    list-style: none;
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+    line-height: 1.6;
+}
+
+.workflow-node.final-node .node-details {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.node-details li {
+    margin: 0.3rem 0;
+}
+
+.node-details li:before {
+    content: "✓ ";
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-right: 0.3rem;
+}
+
+.workflow-node.final-node .node-details li:before {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.workflow-arrow-vertical {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin: -0.5rem 0;
+    animation: pulse 2s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.workflow-arrow-vertical.scroll-visible {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Workflow Summary */
+.workflow-summary {
+    background: var(--light-blue);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.workflow-summary h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.summary-diagram {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.summary-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.summary-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.summary-step {
+    background: var(--white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.summary-arrow {
+    color: var(--primary-blue);
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+/* SECTION 4: BENEFITS CARDS */
+.workflow-benefits {
+    width: 100%;
+    padding: 4rem 3rem;
+    background: linear-gradient(135deg, var(--light-blue) 0%, rgba(0, 102, 255, 0.05) 100%);
+}
+
+.benefits-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.workflow-benefits .section-headline {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.benefit-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.benefit-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.benefit-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.benefit-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+    color: var(--dark-grey);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER LINKS */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .workflow-hero {
+        padding: 3rem 2rem;
+        min-height: 250px;
+    }
+
+    .workflow-headline {
+        font-size: 2.25rem;
+    }
+
+    .workflow-subheadline {
+        font-size: 1.1rem;
+    }
+
+    .desktop-flow {
+        gap: 0.5rem;
+    }
+
+    .workflow-node {
+        min-width: 150px;
+        padding: 1.5rem;
+    }
+
+    .node-icon {
+        font-size: 2rem;
+    }
+
+    .workflow-node h3 {
+        font-size: 1rem;
+    }
+
+    .node-details {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .workflow-hero {
+        padding: 2rem 1.5rem;
+        min-height: 200px;
+    }
+
+    .workflow-headline {
+        font-size: 1.75rem;
+    }
+
+    .workflow-subheadline {
+        font-size: 1rem;
+    }
+
+    .workflow-diagram-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .desktop-flow {
+        display: none;
+    }
+
+    .mobile-flow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .workflow-node {
+        min-width: 100%;
+        max-width: 300px;
+    }
+
+    .workflow-arrow-vertical {
+        margin: 0.5rem 0;
+    }
+
+    .workflow-summary {
+        padding: 1.5rem;
+    }
+
+    .summary-flow {
+        gap: 0.5rem;
+    }
+
+    .summary-step {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .workflow-benefits {
+        padding: 2rem 1.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 1.75rem;
+    }
+
+    .benefit-icon {
+        font-size: 2.5rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .workflow-hero {
+        padding: 1.5rem;
+    }
+
+    .workflow-headline {
+        font-size: 1.5rem;
+    }
+
+    .workflow-subheadline {
+        font-size: 0.9rem;
+    }
+
+    .workflow-diagram-section {
+        padding: 1.5rem;
+    }
+
+    .workflow-node {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 1.25rem;
+    }
+
+    .node-icon {
+        font-size: 1.75rem;
+    }
+
+    .workflow-node h3 {
+        font-size: 0.95rem;
+    }
+
+    .node-label {
+        font-size: 0.75rem;
+    }
+
+    .node-details {
+        font-size: 0.7rem;
+    }
+
+    .workflow-summary {
+        padding: 1.25rem;
+    }
+
+    .summary-flow {
+        gap: 0.3rem;
+    }
+
+    .summary-step {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .workflow-benefits {
+        padding: 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .benefit-icon {
+        font-size: 2rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.8rem;
+    }
+}

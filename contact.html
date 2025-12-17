@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Novatech Cables & Wires Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- SECTION 1: NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <i class="fas fa-bolt"></i>
+                <span>Novatech Cables & Wires Ltd</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="upload.html" class="nav-link">RFP</a></li>
+                <li><a href="workflow.html" class="nav-link">Workflow</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 2: HERO TITLE BLOCK -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1 class="contact-headline">Get In Touch</h1>
+            <p class="contact-subheadline">We're here to help. Reach out to us with any questions or inquiries about AutoBid AI and our services.</p>
+        </div>
+        <div class="contact-hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MAIN CONTACT SECTION -->
+    <section class="contact-main">
+        <div class="contact-container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2 class="section-headline">Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91-XXXX-XXXX-XX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name *</label>
+                            <input type="text" id="company" name="company" required placeholder="Your company name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="pricing">Pricing Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..." rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                        <p class="form-note">We'll get back to you within 24 hours.</p>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2 class="section-headline">Contact Information</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Address</h3>
+                        <p>Industrial Complex, Tech Park<br>Infrastructure City<br>India - 123456</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+911234567890">+91-1234-567-890</a><br><a href="tel:+919876543210">+91-9876-543-210</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@novatech.com">info@novatech.com</a><br><a href="mailto:support@novatech.com">support@novatech.com</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links-contact">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: MAP SECTION -->
+    <section class="contact-map">
+        <h2 class="section-headline">Our Location</h2>
+        <div class="map-container">
+            <div class="map-placeholder">
+                <i class="fas fa-map"></i>
+                <p>Interactive map will be displayed here</p>
+                <small>Integrate Google Maps or similar service</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FAQ SECTION -->
+    <section class="contact-faq">
+        <div class="faq-container">
+            <h2 class="section-headline">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I get started with AutoBid AI?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply sign up on our platform, upload your RFP documents, and our AI agents will automatically analyze and generate bids for you. It's that easy!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What file formats are supported?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We support PDF, DOC, DOCX, and direct links to tender websites. Our system can extract data from any of these formats.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does bid generation take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most bids are generated within 2-4 hours. Complex RFPs may take longer, but you'll receive updates throughout the process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my data secure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we use enterprise-grade encryption and comply with all data protection regulations. Your data is never shared with third parties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I customize the bid parameters?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can set custom pricing models, margin preferences, and technical specifications for each bid.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What support options are available?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer 24/7 email support, phone support during business hours, and a dedicated account manager for enterprise clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: SUCCESS MESSAGE -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. We'll get back to you shortly.</p>
+            <button class="btn btn-primary" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- OVERLAY FOR SUCCESS MESSAGE -->
+    <div class="success-overlay" id="successOverlay"></div>
+
+    <!-- SECTION 7: FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Novatech Cables & Wires Ltd</h4>
+                <p>Powered by AutoBid AI + N8N Automation</p>
+            </div>
+            <div class="footer-section">
+                <h4>Address</h4>
+                <p>Industrial Complex, Tech Park<br>Infrastructure City, India</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@novatech.com<br>Phone: +91-XXXX-XXXX-XX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="upload.html">Upload RFP</a></li>
+                    <li><a href="workflow.html">Workflow</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Novatech Cables & Wires Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload RFP - Novatech Cables & Wires Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="upload-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- SECTION 1: NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <i class="fas fa-bolt"></i>
+                <span>Novatech Cables & Wires Ltd</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="upload.html" class="nav-link active">RFP</a></li>
+                <li><a href="workflow.html" class="nav-link">Workflow</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 2: HERO TITLE BLOCK -->
+    <section class="upload-hero">
+        <div class="upload-hero-content">
+            <h1 class="upload-headline">Upload Tender / RFP Link</h1>
+            <p class="upload-subheadline">Paste any tender website link and let AutoBid AI automatically extract, analyze, and generate your bid.</p>
+        </div>
+        <div class="upload-hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MAIN UPLOAD CARD -->
+    <section class="upload-main">
+        <div class="upload-container">
+            <div class="upload-card-wrapper">
+                <div class="upload-card">
+                    <div class="upload-input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <input 
+                            type="text" 
+                            class="upload-input" 
+                            id="rfpInput" 
+                            placeholder="Paste tender / project website link here…"
+                        >
+                    </div>
+
+                    <button class="btn btn-primary upload-btn" id="processBtn">
+                        <span class="btn-text">Process RFP</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+
+                    <p class="upload-micro-text">
+                        The system will automatically extract the RFP, evaluate deadlines, trigger agents, and email the final bid.
+                    </p>
+
+                    <div class="upload-toggle">
+                        <label class="toggle-label">
+                            <input type="checkbox" class="toggle-checkbox" id="autoEmailToggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Enable Auto-Scan & Auto-Email</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: RIGHT-SIDE ILLUSTRATION -->
+                <div class="upload-illustration">
+                    <div class="illustration-content">
+                        <div class="scanning-animation">
+                            <div class="scan-circle"></div>
+                            <div class="scan-circle"></div>
+                            <div class="scan-circle"></div>
+                        </div>
+                        <div class="ai-processing">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="document-extraction">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <p class="progress-text">Analyzing RFP…</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: INFO CARDS -->
+    <section class="upload-info">
+        <div class="info-container">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+                <h3>Auto Extract RFP</h3>
+                <p>Pulls PDFs, deadlines, technical requirements, and project specifications automatically from any tender website.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Agent Processing</h3>
+                <p>Technical, Pricing, Risk & Win Score Agents run automatically to evaluate and optimize your bid response.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Auto Email Output</h3>
+                <p>Final bid sent to Product Manager instantly with all technical specs, pricing, and risk assessments included.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONFIRMATION POPUP -->
+    <div class="confirmation-popup" id="confirmationPopup">
+        <div class="popup-content">
+            <div class="popup-icon success">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>RFP Processing Started</h2>
+            <p>Your document is being analyzed by AutoBid AI.</p>
+            <p class="popup-url" id="popupUrl"></p>
+            <button class="btn btn-primary" id="closePopupBtn">Done</button>
+        </div>
+    </div>
+
+    <!-- OVERLAY FOR POPUP -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+
+    <script src="script.js"></script>
+    <script src="upload-script.js"></script>
+</body>
+</html>
